@@ -7,6 +7,7 @@ const colors = [
   '#795548',
 ];
 
+let randomColor = null;
 let intervalId = null;
 
 const refs = {
@@ -32,14 +33,11 @@ function onStopBtnClick(e) {
 }
 
 function changeBodyColor() {
-    const randomIndex = randomIntegerFromInterval(1, 5);
-    //refs.body.style.backgroundColor = colors[randomIndex];
-
-    colors.map((color, index) => {
-            if (index === randomIndex) {
-            refs.body.style.backgroundColor = color;
-        }
-    });
+    
+    let currentIndex = randomIntegerFromInterval(0, 5);
+    refs.body.style.backgroundColor = randomColor;
+    randomColor = colors[currentIndex];
+    
 };
 
 
